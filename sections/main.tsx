@@ -59,7 +59,7 @@ const Main = () => {
                 <div className="flex flex-row gap-2 justify-center">
                   <input
                     placeholder="Your Email"
-                    className=" pl-6 py-3 rounded-tl-full rounded-bl-full w-full text-secondary"
+                    className=" pl-6 py-3 rounded-tl-full rounded-bl-full w-full text-secondary dark:bg-white"
                     type="text"
                     required
                     id="email"

@@ -4,7 +4,6 @@ import phone from "../assets/mockup.png";
 import Footer from "../components/footer";
 import Nav from "../components/nav";
 import Spacer from "../components/spacer";
-import Contact from "../sections/contact";
 import Features from "../sections/features";
 import Gallery from "../sections/gallery";
 import Main from "../sections/main";

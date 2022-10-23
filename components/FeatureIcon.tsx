@@ -5,7 +5,7 @@ const FeatureIcon = (props: any) => {
       <div className="p-2 w-12 h-12 flex justify-center items-center rounded-full bg-secondary border border-primary/80">
         <Image src={props.img} layout="fixed" alt="icon" />
       </div>
-      <h1 className="text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl text-secondary text-left font-normal leading-[4rem] md:ml-4">
+      <h1 className="text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl text-secondary dark:text-white text-left font-normal leading-[4rem] md:ml-4">
         {props.content}
       </h1>
     </div>
