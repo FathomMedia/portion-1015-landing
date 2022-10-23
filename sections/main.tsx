@@ -82,8 +82,8 @@ const Main = () => {
           <div
             className={
               showMessage
-                ? "block text-center text-white border border-primary rounded-xl px-8 py-4 border-gradient-to-r from-primary to-primary/80 duration"
-                : "hidden"
+                ? "block text-center text-white  mx-3 border border-primary rounded-xl px-8 py-4 border-gradient-to-r from-primary to-primary/80"
+                : "hidden mx-3"
             }
           >
             <p>👏 Thanks for joining!</p>

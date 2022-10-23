@@ -15,7 +15,8 @@
     "react-alice-carousel": "^2.6.4",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.38.0",
-    "react-hubspot": "^1.0.4"
+    "react-hubspot": "^1.0.4",
+    "sharp": "^0.31.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.0",
