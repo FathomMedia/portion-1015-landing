@@ -27,7 +27,7 @@ export default function Home() {
           <Features />
         </section>
         <section id="gallery">
-          <Gallery id="gallery" />
+          <Gallery />
         </section>
         <Footer />
       </div>

@@ -3,7 +3,7 @@ const Loader = () => {
     <div className="flex">
       <svg
         aria-hidden="true"
-        class="h-5 text-gray-100 animate-spin dark:text-gray-100 fill-primary flex justify-center items-center"
+        className="h-5 text-gray-100 animate-spin dark:text-gray-100 fill-primary flex justify-center items-center"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import phone from "../assets/mockup.png";
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "../components/Loader";
-const Main = ({ props }) => {
+const Main = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
@@ -17,7 +17,7 @@ const Main = ({ props }) => {
     setShowMessage(true);
   };
 
-  const submit_hubspot_form = async (email) => {
+  const submit_hubspot_form = async (email: string) => {
     const portalId = "26502452";
     const formGuid = "83b942ed-d1da-46a4-b436-0d57399f56ab";
     const config = {
