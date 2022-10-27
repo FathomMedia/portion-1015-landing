@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import icon from "../assets/portion-icon.svg";
+import icon from "../public/assets/portion-icon.svg";
 // import logo from "../assets/logo.svg";
-import logo from "../assets/logo-dark.svg";
+import logo from "../public/assets/logo.svg";
 import BtnPrim from "./primaryBtn";
 const Nav = () => {
   return (
-    <div className="flex w-full m-0 px-16 justify-between items-center h-20 text-secondary dark:text-white font-medium text-sm">
+    <div className="flex w-full m-0 px-16 justify-between items-center h-24 z-50 text-white font-medium text-sm bg-secondary">
       <div className="hidden md:block md:w-[12vw] lg:w-[10vw] max-w-[150px]">
         <Image src={logo} layout="responsive" alt="logo" />
       </div>

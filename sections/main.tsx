@@ -1,6 +1,6 @@
 import Image from "next/image";
 import BtnPrim from "../components/primaryBtn";
-import phone from "../assets/mockup.png";
+import phone from "../public/assets/mockup.png";
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "../components/Loader";
@@ -43,7 +43,7 @@ const Main = () => {
   };
   return (
     <div>
-      <div className=" bg-cover h-[70vw] md:h-[30vw] bg-blend-multiply bg-secondary/70 bg-no-repeat bg-center bg-[url('../assets/hero.jpg')] flex justify-evenly items-center md:mx-16 md:rounded-md">
+      <div className=" bg-cover h-[70vw] md:h-[30vw] bg-blend-multiply bg-secondary/70 bg-no-repeat bg-center bg-[url('../public/assets/hero.jpg')] flex justify-evenly items-center">
         <div>
           <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-center items-center md:text-left text-white font-bold md:w-10 lg:leading-[4rem]">
             Simple. Good. Food.

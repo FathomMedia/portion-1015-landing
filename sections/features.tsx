@@ -1,8 +1,8 @@
 import Spacer from "../components/spacer";
-import bowl from "../assets/bowl.svg";
-import filters from "../assets/filters.svg";
-import gym from "../assets/gym.svg";
-import features from "../assets/features.png";
+import bowl from "../public/assets/bowl.svg";
+import filters from "../public/assets/filters.svg";
+import gym from "../public/assets/gym.svg";
+import features from "../public/assets/features.png";
 import Image from "next/image";
 import FeatureIcon from "../components/FeatureIcon";
 
