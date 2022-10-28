@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import BtnPrim from "./primaryBtn";
 
 const Footer = () => {
   return (
-    <div className="relative h-64 bg-secondary text-white justify-center overflow-hidden">
+    <div className="relative h-48 bg-secondary text-white justify-center overflow-hidden">
       <div className="absolute -right-56 md:-right-16 top-24">
         {" "}
         <Image
@@ -20,7 +21,13 @@ const Footer = () => {
             <BtnPrim content="Follow us on Instagram" />
           </a>
         </div>
-        <div className="flex items-center mt-5">
+        <br />
+        <div className="space-x-2 md:flex justify-center items-center hidden ">
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <p> | </p>
+          <Link href="/terms-and-conditions">Terms & Conditions</Link>
+        </div>
+        <div className="absolute bottom-4 flex items-center mt-5">
           <p>Copyright © 2022 Portion.</p>
         </div>
       </div>
