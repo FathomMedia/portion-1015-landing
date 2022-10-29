@@ -34,7 +34,7 @@ const Gallery = () => {
     },
   ];
   return (
-    <div className="px-16 container mx-auto">
+    <div className="px-16 container mb-32 mx-auto">
       <div className="lg:hidden">
         <AliceCarousel
           disableButtonsControls={true}
