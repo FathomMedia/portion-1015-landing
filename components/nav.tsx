@@ -16,13 +16,13 @@ const Nav = () => {
   };
 
   return (
-    <div className="fixed flex w-full top-0 px-16 justify-between items-center h-24 z-50 text-white font-medium text-sm bg-secondary">
+    <div className="fixed top-0 z-50 flex items-center justify-between w-full h-24 px-16 text-sm font-medium text-white bg-secondary">
       <Link href="/">
-        <button>
+        <button type="button" title="home">
           <Logo />
         </button>
       </Link>
-      <div className="md:hidden flex justify-end z-50">
+      <div className="z-50 flex justify-end md:hidden">
         <button onClick={toggleMenu}>
           {showMenu ? (
             <Image src={menuClose} alt="menu-close" width={40} height={40} />
@@ -38,9 +38,9 @@ const Nav = () => {
             : "hidden"
         }
       >
-        <div className="flex flex-col text-center space-y-6 justify-center align-middle h-full items-center">
+        <div className="flex flex-col items-center justify-center h-full space-y-6 text-center align-middle">
           <Link href="/">
-            <button onClick={toggleMenu}>
+            <button type="button" title="menu" onClick={toggleMenu}>
               <Logo />
             </button>
           </Link>
@@ -57,7 +57,7 @@ const Nav = () => {
           <a href="https://www.instagram.com/portion_app/">
             <BtnPrim content="Subscribe" />
           </a>
-          <div className="absolute bottom-4 space-y-4 z-50">
+          <div className="absolute z-50 space-y-4 bottom-4">
             <Link href="/privacy-policy">
               <p onClick={toggleMenu} className="text-xl">
                 Privacy Policy
@@ -71,7 +71,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex items-center space-x-8 hidden">
+      <div className="items-center hidden space-x-8 md:flex">
         <Link href="/#features">Features</Link>
         <Link href="/#gallery">Gallery</Link>
         <div className="hidden md:block">
