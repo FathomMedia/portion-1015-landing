@@ -168,7 +168,7 @@ function emailTemplate(userEmail) {
                         Support</button></a>
                         <br /><br/>
                 <p style="color: #243746; font-family: inter; font-size: 10px"> You are receiving this email because you are registered at Portion. You will no longer be in the waitlist if you unsubscribe. </p>
-                <a href="#">Unsubscribe</a>
+                <a href="https://www.portion-app.com/unsubscribe/${userEmail}">Unsubscribe</a>
             </div>
         </body>
         
