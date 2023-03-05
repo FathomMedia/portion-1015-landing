@@ -61,128 +61,44 @@ export default async function handler(
  */
 function emailTemplate(userEmail: string) {
   return `
-        <!DOCTYPE html>
-        <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-            xmlns:o="urn:schemas-microsoft-com:office:office">
-        
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="x-apple-disable-message-reformatting">
-            <title></title>
-            <link href="https://fonts.googleapis.com/css?family=Inter:wght@200;300;400;500;600;700&display=swap"
-                rel="stylesheet">
-            <style>
-                html,
-                body {
-                    margin: 0 auto !important;
-                    padding: 0 !important;
-                    height: 100% !important;
-                    text-align: center;
-                    width: 100% !important;
-                    background: white;
-                }
-        
-                * {
-                    -ms-text-size-adjust: 100%;
-                    -webkit-text-size-adjust: 100%;
-                }
-        
-                div[style*="margin: 16px 0"] {
-                    margin: 0 !important;
-                }
-        
-                table,
-                td {
-                    mso-table-lspace: 0pt !important;
-                    mso-table-rspace: 0pt !important;
-                }
-        
-                img {
-                    -ms-interpolation-mode: bicubic;
-                }
-        
-                a {
-                    text-decoration: none;
-                }
-        
-                *[x-apple-data-detectors],
-                .unstyle-auto-detected-links *,
-                .aBn {
-                    border-bottom: 0 !important;
-                    cursor: default !important;
-                    color: inherit !important;
-                    text-decoration: none !important;
-                    font-size: inherit !important;
-                    font-family: inherit !important;
-                    font-weight: inherit !important;
-                    line-height: inherit !important;
-                }
-        
-                .a6S {
-                    display: none !important;
-                    opacity: 0.01 !important;
-                }
-        
-                .im {
-                    color: inherit !important;
-                }
-        
-                img.g-img+div {
-                    display: none !important;
-                }
-        
-                @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-                    u~div .email-container {
-                        min-width: 320px !important;
-                    }
-                }
-        
-                @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-                    u~div .email-container {
-                        min-width: 375px !important;
-                    }
-                }
-        
-                @media only screen and (min-device-width: 414px) {
-                    u~div .email-container {
-                        min-width: 414px !important;
-                    }
-                }
-            </style>
-            <style></style>
-        </head>
-        
-        <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly;">
-            <div style="max-width: 600px; margin: 0 auto;" class="email-container">
-                <div
-                    style=" display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 25px; background-image: url(https://res.cloudinary.com/dfaapefzb/image/upload/v1666531525/banner-min_jr5mt8.jpg); height: 200px; width: 100%; ">
-                    <img src="https://res.cloudinary.com/dfaapefzb/image/upload/v1666530846/portion-icon_szkmnn.svg" alt="logo"
-                        width="60px">
-                    <h1 style="font-family: inter; color: white; ">Sign Up to Portion</h1>
-                </div>
-                <h2 style="font-family: inter; color: #243746; ">Great news, you're in!</h2>
-                <p style="color: #243746; font-family: inter;">The wait is over! Sign up to Portion and start
-                    your subscription
-                    now!</p>
-                <p style="color: #243746; font-family: inter;">To sign up, head over to the Portion app and
-                    enter your
-                    email:
-                </p>
-                <p style="color: #243746; font-family: inter;">${userEmail}
-                </p>
-                <br />
-        
-                <a href="mailto:support@portion-app.com"><button
-                        style="cursor: pointer; font-family: inter; font-weight: bold; border: none; background-color: #FECD04; padding: 1rem 2rem; border-radius: 100px;">Contact
-                        Support</button></a>
-                        <br /><br/>
-                <p style="color: #243746; font-family: inter; font-size: 10px"> You are receiving this email because you are registered at Portion. You will no longer be in the waitlist if you unsubscribe. </p>
-                <a href="https://www.portion-app.com/unsubscribe/${userEmail}">Unsubscribe</a>
-            </div>
-        </body>
-        
-        </html>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+  </head>
+  <div id="__react-email-preview" style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0">Great news, you&#x27;re in!<div> ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿ ‌​‍‎‏﻿</div>
+  </div>
+
+  <body style="background-color:rgb(55,79,98);padding-top:2.5rem;padding-bottom:2.5rem;font-family:ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">
+    <table align="center" border="0" cellPadding="0" cellSpacing="0" role="presentation" width="100%" style="margin-left:auto;margin-right:auto;max-width:36rem;border-radius:0.75rem;background-color:rgb(255,255,255);padding:2rem;box-shadow:0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0,0,0,0.1), 0 1px 2px -1px rgb(0,0,0,0.1)">
+      <tbody>
+        <tr>
+          <td>
+            <table align="center" border="0" cellPadding="0" cellSpacing="0" role="presentation" width="100%" style="border-radius:0.75rem;background-image:url(&quot;https://res.cloudinary.com/dfaapefzb/image/upload/v1666531525/banner-min_jr5mt8.jpg&quot;);background-size:cover">
+              <tbody>
+                <tr>
+                  <td><img alt="Portion" src="https://res.cloudinary.com/dfaapefzb/image/upload/v1666530846/portion-icon_szkmnn.svg" style="margin-left:auto;margin-right:auto;width:6rem;max-width:24rem;padding-left:2.5rem;padding-right:2.5rem;padding-top:1rem;padding-bottom:1rem;display:block;outline:none;border:none;text-decoration:none" /></td>
+                </tr>
+              </tbody>
+            </table>
+            <table align="center" role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%" style="margin-top:1rem;width:100%;border-radius:5px;background-color:rgb(249,250,251);padding:1rem;max-width:37.5em;border:1px solid #eee">
+              <tr style="width:100%">
+                <td>
+                  <p style="text-align:center;font-weight:600;color:rgb(31,41,55);font-size:18px;line-height:24px;margin:16px 0">Great news, you&#x27;re in!</p>
+                  <p style="color:rgb(107,114,128);font-size:14px;line-height:24px;margin:16px 0;text-align:left">The wait is over! Sign up to Portion and start your subscription now!</p>
+                  <p style="color:rgb(107,114,128);font-size:14px;line-height:24px;margin:16px 0;text-align:left">To sign up, head over to the Portion app and enter your email:</p>
+                  <p style="text-align:center;font-weight:600;color:rgb(31,41,55);font-size:14px;line-height:24px;margin:16px 0">${userEmail}</p>
+                </td>
+              </tr>
+            </table>
+            <hr style="margin-top:1.5rem;margin-bottom:1.5rem;width:100%;border:none;border-top:1px solid #eaeaea" /><a href="mailto:support@portion-app.com" target="_blank" style="margin-left:auto;margin-right:auto;display:inline-block;width:100%;border-radius:0.375rem;background-color:rgb(36,55,70);color:#fff;font-size:16px;font-weight:bold;text-decoration:none;text-align:center;padding:0px 0px;line-height:100%;max-width:100%"><span></span><span style="color:#fff;font-size:16px;font-weight:bold;text-decoration:none;text-align:center;display:inline-block;padding:10px 0px;max-width:100%;line-height:120%;text-transform:none;mso-padding-alt:0px;mso-text-raise:0">Contact Support</span><span></span></a><a href="https://www.portion-app.com/unsubscribe/${userEmail}" target="_blank" style="margin-left:auto;margin-right:auto;width:100%;color:rgb(107,114,128);font-size:12px;text-decoration:none;text-align:center;display:inline-block;padding:0px 0px;line-height:100%;max-width:100%"><span></span><span style="font-size:12px;text-decoration:none;text-align:center;display:inline-block;padding:10px 0px;max-width:100%;line-height:120%;text-transform:none;mso-padding-alt:0px;mso-text-raise:0">Unsubscribe</span><span></span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>
           `;
 }
