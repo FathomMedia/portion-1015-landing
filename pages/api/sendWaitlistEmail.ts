@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
+import { createTransport } from "nodemailer";
 import NextCors from "nextjs-cors";
 
 type Data = {
@@ -10,15 +10,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const userEmail = req.query.userEmail;
+  /* Getting the user's email address from the query string. */
+  const userEmail = req.query.userEmail as string;
 
+  /* A middleware that allows the API to accept requests from the frontend. */
   await NextCors(req, res, {
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-    origin: "http://localhost:4200", //! TODO add correct url for portion web
+    methods: ["POST"],
+    origin: "http://localhost:4200", //! TODO - replace the url with the actual address of portion website
     optionsSuccessStatus: 200,
   });
 
-  const transporter = nodemailer.createTransport({
+  /* Creating a transporter object that will be used to send the email. */
+  const transporter = createTransport({
     port: 465,
     host: "smtp.zoho.com",
     auth: {
@@ -28,6 +31,7 @@ export default async function handler(
     secure: true,
   });
 
+  /* Creating an object that will be used to send the email. */
   const mailData = {
     from: process.env.ZOHO_USERNAME,
     to: userEmail,
@@ -35,6 +39,7 @@ export default async function handler(
     html: emailTemplate(userEmail),
   };
 
+  /* Sending the email to the user. */
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
       console.log(err);
@@ -48,7 +53,13 @@ export default async function handler(
   });
 }
 
-function emailTemplate(userEmail) {
+/**
+ * It takes in a user's email address and returns an HTML template that can be used to send an email to
+ * the user
+ * @param {string} userEmail - The email address of the user who signed up.
+ * @returns A string of HTML code.
+ */
+function emailTemplate(userEmail: string) {
   return `
         <!DOCTYPE html>
         <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
