@@ -1,13 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import phone from "../assets/mockup.png";
-import Footer from "../components/footer";
-import Nav from "../components/nav";
-import Spacer from "../components/spacer";
 import Features from "../sections/features";
 import Gallery from "../sections/gallery";
 import Main from "../sections/main";
-import Landing from "../sections/main";
 
 export default function Home() {
   return (

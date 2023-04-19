@@ -16,7 +16,7 @@ export default async function handler(
   /* A middleware that allows the API to accept requests from the frontend. */
   await NextCors(req, res, {
     methods: ["POST"],
-    origin: "http://localhost:4200", //! TODO - replace the url with the actual address of portion website
+    origin: "https://main.d17w3fs5tcecgt.amplifyapp.com", //! TODO - replace the url with the actual address of portion website
     optionsSuccessStatus: 200,
   });
 

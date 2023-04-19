@@ -1,10 +1,9 @@
 import Image from "next/image";
-import ImageGallery from "../components/ImageGallery";
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const handleDragStart = (e) => e.preventDefault();
+const handleDragStart = (e: any) => e.preventDefault();
 
 const Gallery = () => {
   const images = [
