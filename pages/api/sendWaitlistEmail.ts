@@ -15,43 +15,58 @@ export default async function handler(
   const userEmail = req.query.userEmail as string;
 
   /* A middleware that allows the API to accept requests from the frontend. */
-  await NextCors(req, res, {
-    methods: ["POST", "OPTIONS"],
-    origin: "*",
-    optionsSuccessStatus: 200,
-  });
+  // await NextCors(req, res, {
+  //   methods: ["POST", "OPTIONS"],
+  //   origin: "*",
+  //   optionsSuccessStatus: 200,
+  // });
 
-  /* Creating a transporter object that will be used to send the email. */
-  const transporter = createTransport({
-    port: 465,
-    host: "smtp.zoho.com",
-    auth: {
-      user: process.env.ZOHO_USERNAME,
-      pass: process.env.ZOHO_PASSWORD,
-    },
-    secure: true,
-  });
+  // Add CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  /* Creating an object that will be used to send the email. */
-  const mailData = {
-    from: process.env.ZOHO_USERNAME,
-    to: userEmail,
-    subject: `Portion - You're In!`,
-    html: emailTemplate(userEmail),
-  };
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
 
-  /* Sending the email to the user. */
-  transporter.sendMail(mailData, function (err, info) {
-    if (err) {
-      console.log(err);
-      res.status(500);
-      res.json({ isSent: false, error: err });
-    } else {
-      console.log(info);
-      res.status(200);
-      res.json({ isSent: true });
-    }
-  });
+  if (req.method === "POST") {
+    /* Creating a transporter object that will be used to send the email. */
+    const transporter = createTransport({
+      port: 465,
+      host: "smtp.zoho.com",
+      auth: {
+        user: process.env.ZOHO_USERNAME,
+        pass: process.env.ZOHO_PASSWORD,
+      },
+      secure: true,
+    });
+
+    /* Creating an object that will be used to send the email. */
+    const mailData = {
+      from: process.env.ZOHO_USERNAME,
+      to: userEmail,
+      subject: `Portion - You're In!`,
+      html: emailTemplate(userEmail),
+    };
+
+    /* Sending the email to the user. */
+    transporter.sendMail(mailData, function (err, info) {
+      if (err) {
+        console.log(err);
+        res.status(500);
+        res.json({ isSent: false, error: err });
+      } else {
+        console.log(info);
+        res.status(200);
+        res.json({ isSent: true });
+      }
+    });
+  }
 }
 
 /**
