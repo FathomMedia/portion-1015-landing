@@ -15,19 +15,13 @@ export default async function handler(
   const userEmail = req.query.userEmail as string;
 
   /* A middleware that allows the API to accept requests from the frontend. */
-  // await NextCors(req, res, {
-  //   methods: ["POST", "OPTIONS"],
-  //   origin: "*",
-  //   optionsSuccessStatus: 200,
-  // });
+  await NextCors(req, res, {
+    methods: ["POST", "OPTIONS"],
+    origin: "*",
 
-  // Add CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    optionsSuccessStatus: 200,
+    preflightContinue: true,
+  });
 
   if (req.method === "OPTIONS") {
     res.status(200).end();
