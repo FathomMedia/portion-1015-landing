@@ -18,17 +18,16 @@ export default async function handler(
   await NextCors(req, res, {
     methods: ["POST", "OPTIONS"],
     origin: "*",
-
     optionsSuccessStatus: 200,
     preflightContinue: true,
   });
 
   if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.status(200).end();
     return;
-  }
-
-  if (req.method === "POST") {
+  } else if (req.method === "POST") {
     /* Creating a transporter object that will be used to send the email. */
     const transporter = createTransport({
       port: 465,
