@@ -4,6 +4,7 @@ import NextCors from "nextjs-cors";
 
 type Data = {
   isSent: boolean;
+  error?: any;
 };
 
 export default async function handler(
@@ -44,7 +45,7 @@ export default async function handler(
     if (err) {
       console.log(err);
       res.status(500);
-      res.json({ isSent: false });
+      res.json({ isSent: false, error: err });
     } else {
       console.log(info);
       res.status(200);
