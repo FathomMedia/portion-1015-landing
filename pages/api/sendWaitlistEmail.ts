@@ -48,7 +48,6 @@ export default async function handler(
       res.json({ isSent: false, error: err });
     } else {
       console.log(info);
-      res.setHeader("Access-Control-Allow-Origin", "*");
       res.status(200);
       res.json({ isSent: true });
     }
