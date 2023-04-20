@@ -17,7 +17,7 @@ export default async function handler(
   /* A middleware that allows the API to accept requests from the frontend. */
   await NextCors(req, res, {
     methods: ["POST", "OPTIONS"],
-    origin: "https://www.admin.portion-app.com/",
+    origin: "*",
     optionsSuccessStatus: 200,
   });
 
@@ -48,6 +48,7 @@ export default async function handler(
       res.json({ isSent: false, error: err });
     } else {
       console.log(info);
+      res.setHeader("Access-Control-Allow-Origin", "*");
       res.status(200);
       res.json({ isSent: true });
     }
