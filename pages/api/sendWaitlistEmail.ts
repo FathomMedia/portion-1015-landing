@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
-import NextCors from "nextjs-cors";
+import Cors from "nextjs-cors";
 
 type Data = {
   isSent: boolean;
@@ -15,8 +15,9 @@ export default async function handler(
   const userEmail = req.query.userEmail as string;
 
   /* A middleware that allows the API to accept requests from the frontend. */
-  await NextCors(req, res, {
+  await Cors(req, res, {
     methods: ["POST", "OPTIONS"],
+    origin: "https://www.admin.portion-app.com",
     optionsSuccessStatus: 200,
   });
 
