@@ -17,7 +17,8 @@ export default async function handler(
   /* A middleware that allows the API to accept requests from the frontend. */
   await NextCors(req, res, {
     methods: ["POST"],
-    origin: "https://www.admin.portion-app.com", //! TODO - replace the url with the actual address of portion website
+    origin: "https://www.portion-app.com",
+    // origin: "https://www.admin.portion-app.com",
     optionsSuccessStatus: 200,
   });
 
