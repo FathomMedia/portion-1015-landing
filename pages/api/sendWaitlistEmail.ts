@@ -1,11 +1,35 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
-import NextCors from "nextjs-cors";
+// import NextCors from "nextjs-cors";
+import Cors from "cors";
 
 type Data = {
   isSent: boolean;
   error?: any;
 };
+
+// Initialize the cors middleware
+const cors = initMiddleware(
+  Cors({
+    methods: ["POST", "OPTIONS"],
+    origin: "https://www.admin.portion-app.com",
+    optionsSuccessStatus: 200,
+  })
+);
+
+// Helper function to initialize middleware
+// You can use this function to initialize any middleware
+function initMiddleware(middleware: any) {
+  return (req: NextApiRequest, res: NextApiResponse) =>
+    new Promise((resolve, reject) => {
+      middleware(req, res, (result: any) => {
+        if (result instanceof Error) {
+          return reject(result);
+        }
+        return resolve(result);
+      });
+    });
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -15,11 +39,13 @@ export default async function handler(
   const userEmail = req.query.userEmail as string;
 
   /* A middleware that allows the API to accept requests from the frontend. */
-  await NextCors(req, res, {
-    methods: ["POST", "OPTIONS"],
-    origin: "https://www.admin.portion-app.com",
-    optionsSuccessStatus: 200,
-  });
+  // await NextCors(req, res, {
+  //   methods: ["POST", "OPTIONS"],
+  //   origin: "https://www.admin.portion-app.com",
+  //   optionsSuccessStatus: 200,
+  // });
+
+  await cors(req, res);
 
   /* Creating a transporter object that will be used to send the email. */
   const transporter = createTransport({
