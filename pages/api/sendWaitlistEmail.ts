@@ -16,10 +16,10 @@ export default async function handler(
 
   /* A middleware that allows the API to accept requests from the frontend. */
   await NextCors(req, res, {
-    methods: ["POST", "OPTIONS"],
+    methods: ["POST"],
     origin: "*",
     optionsSuccessStatus: 200,
-    preflightContinue: true,
+    // preflightContinue: true,
   });
 
   if (req.method === "OPTIONS") {
