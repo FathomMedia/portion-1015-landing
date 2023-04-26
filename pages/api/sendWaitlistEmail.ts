@@ -15,12 +15,12 @@ export default async function handler(
   const userEmail = req.query.userEmail as string;
 
   /* A middleware that allows the API to accept requests from the frontend. */
-  await NextCors(req, res, {
-    methods: ["GET"],
-    origin: "*",
-    optionsSuccessStatus: 200,
-    // preflightContinue: true,
-  });
+  // await NextCors(req, res, {
+  //   methods: ["GET"],
+  //   origin: "*",
+  //   optionsSuccessStatus: 200,
+  //   // preflightContinue: true,
+  // });
 
   // if (req.method === "OPTIONS") {
   //   res.setHeader("Access-Control-Allow-Origin", "*");
